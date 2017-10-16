@@ -1,0 +1,21 @@
+Pascal Triangle with Octave 
+
+clear all 
+clc
+tic
+n=4;change the value of n here 
+m=zeros(n,n);
+m(1,1)=1;
+for i=2:n
+  
+count=sum(m((i-1),:)!=0);% to count the elements of prev row
+  m(i,1)=1;
+  for j=2:count+1
+  m(i,j)=m(i-1,j-1)+m(i-1,j);
+  j=j+1;
+  end
+  m(i,count+1)=1;
+  i=i+1;
+  end
+k1=toc;
+disp(k1);
