@@ -1,0 +1,11 @@
+#newton raphson methon for square root g=g-g/g'
+x=int(input("Enter the variable whose square root you want to find : " ))
+#variables declaration
+eps=0.01
+guess=x/2
+numguess=0
+while abs(guess**2-x)>=eps:
+    numguess+=1
+    guess=guess - ((guess**2-x)/(2*guess))
+
+print("the suqare root is approx:"+ str(guess) + " and the number fo guesses are:"+ str(numguess))
